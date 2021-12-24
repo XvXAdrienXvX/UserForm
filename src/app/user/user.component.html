@@ -1,57 +1,105 @@
 <div class="container">
-<div class="row">
-  <div class="col-md-6" id="user-form-col">
-    <form #userForm="ngForm" id="user-form">
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Enter first name"
-          [(ngModel)]="userModel.firstName"
-          name="firstName"
-          #firstName="ngModel"
-        />
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Enter last name"
-          [(ngModel)]="userModel.lastName"
-          name="lastName"
-          #lastName="ngModel"
-        />
-      </div>
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          placeholder="Enter email"
-          [(ngModel)]="userModel.email"
-          name="email"
-          #email="ngModel"
-        />
-      </div>
-      <div class="form-group">
-        <label for="cellphone">Mobile</label>
-        <input
-          type="tel"
-          class="form-control"
-          placeholder="Enter cellphone"
-          [(ngModel)]="userModel.mobileNumber"
-          name="cellphone"
-          #cellphone="ngModel"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary mr-3" (click)="createUser();userForm.reset()">Add</button>
-      <button type="submit" class="btn btn-primary" (click)="goToUserDetails()">View User Details</button>
-    </form>
+  <div class="row">
+    <div class="col-md-6" id="user-form-col">
+      <form #userForm="ngForm" id="user-form">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            placeholder="Enter first name"
+            [(ngModel)]="userModel.firstName"
+            name="firstName"
+            #firstName="ngModel"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (firstName.touched || userForm.submitted) &&
+              firstName.errors?.required
+            "
+          >
+            First Name is required
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            placeholder="Enter last name"
+            [(ngModel)]="userModel.lastName"
+            name="lastName"
+            #lastName="ngModel"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (lastName.touched || userForm.submitted) &&
+              lastName.errors?.required
+            "
+          >
+            Last Name is required
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            required
+            type="email"
+            class="form-control"
+            placeholder="Enter email"
+            [(ngModel)]="userModel.email"
+            name="email"
+            #email="ngModel"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (email.touched || userForm.submitted) && email.errors?.required
+            "
+          >
+            email is required
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="cellphone">Mobile</label>
+          <input
+            required
+            type="tel"
+            class="form-control"
+            placeholder="Enter cellphone"
+            [(ngModel)]="userModel.mobileNumber"
+            name="cellphone"
+            #cellphone="ngModel"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (cellphone.touched || userForm.submitted) &&
+              cellphone.errors?.required
+            "
+          >
+            cellphone is required
+          </span>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary mr-3"
+          (click)="createUser(); userForm.reset()"
+        >
+          Add
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="goToUserDetails()"
+        >
+          View User Details
+        </button>
+      </form>
+    </div>
   </div>
 </div>
-
- 
-</div>
-
