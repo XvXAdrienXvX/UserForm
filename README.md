@@ -2,26 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
-## Development server
+## Run application
+- Clone API first https://github.com/XvXAdrienXvX/UserFormAPI
+- Install latest node
+- Clone the repo to a location locally
+- Navigate to the cloned location & open git bash
+- Run `npm install` to install node_module libraries
+- Run `npm start` to run the app locally. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Sample
+<img src="https://user-images.githubusercontent.com/52564376/147354241-2a09117b-5dd7-498b-9adc-dfe2ced87e06.png" width="500" height="400">
+<br>
+<img src="https://user-images.githubusercontent.com/52564376/147354561-2dd00aed-1e06-4087-b937-bffa3272274e.png" width="800" height="200">
