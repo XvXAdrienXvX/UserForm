@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <button class="btn btn-primary" id="back" (click)="goToUserFormPage()">Back To User Form</button>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped" id="user-grid">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Actions</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let user of userArray; index as i;">
+                        <tr scope="row">
+                          <td>
+                              <span class="actions">
+                                <a *ngIf="!isEditable && enableEditIndex != i" class="mr-3" (click)="removeUser(user)">Delete</a>
+                                <a *ngIf="isEditable && enableEditIndex == i" class="mr-3" (click)="updateUser(user)">Save</a>
+                                <a *ngIf="!hideEditButton && enableEditIndex != i" class="mr-3" (click)="setEditMode(i)">Edit</a>
+                                <a class="mr-3" *ngIf="isEditable && enableEditIndex == i" (click)="resetEditMode()">Back</a>
+                              </span>                        
+                          </td>
+                          <td>
+                              <input [readonly]="enableEditIndex != i" *ngIf="isEditable" type="text" [(ngModel)]="user.firstName">
+                              <span *ngIf="!isEditable">{{user.firstName}}</span>
+                          </td>
+                          <td>
+                            <input [readonly]="enableEditIndex != i" *ngIf="isEditable" type="text" [(ngModel)]="user.lastName">
+                            <span *ngIf="!isEditable">{{user.lastName}}</span>
+                          </td>
+                          <td>
+                            <input [readonly]="enableEditIndex != i" *ngIf="isEditable" type="email" [(ngModel)]="user.email">
+                            <span *ngIf="!isEditable">{{user.email}}</span>
+                          </td>
+                          <td>
+                            <input [readonly]="enableEditIndex != i" *ngIf="isEditable" type="tel" [(ngModel)]="user.mobileNumber">
+                            <span *ngIf="!isEditable">{{user.mobileNumber}}</span>
+                          </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>

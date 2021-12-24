@@ -1,0 +1,57 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-6" id="user-form-col">
+    <form #userForm="ngForm" id="user-form">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter first name"
+          [(ngModel)]="userModel.firstName"
+          name="firstName"
+          #firstName="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter last name"
+          [(ngModel)]="userModel.lastName"
+          name="lastName"
+          #lastName="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter email"
+          [(ngModel)]="userModel.email"
+          name="email"
+          #email="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cellphone">Mobile</label>
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="Enter cellphone"
+          [(ngModel)]="userModel.mobileNumber"
+          name="cellphone"
+          #cellphone="ngModel"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" (click)="createUser();userForm.reset()">Add</button>
+      <button type="submit" class="btn btn-primary" (click)="goToUserDetails()">View User Details</button>
+    </form>
+  </div>
+</div>
+
+ 
+</div>
+

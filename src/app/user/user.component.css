@@ -1,0 +1,12 @@
+#user-form-col {
+    float:none;
+    margin:auto;
+    padding-top: 60px;
+}
+
+#user-form {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 3px 3px #DEDEDE
+}
